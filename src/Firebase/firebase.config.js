@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "dragon-craze",
   storageBucket: "dragon-craze.firebasestorage.app",
   messagingSenderId: "795701731591",
-  appId: "1:795701731591:web:dc58c9398801754b76a5a2"
+  appId: "1:795701731591:web:dc58c9398801754b76a5a2",
 };
 
 // Initialize Firebase

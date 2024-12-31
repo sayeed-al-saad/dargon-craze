@@ -2,19 +2,13 @@
 import daisyui from "daisyui";
 
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      fontFamily:{
-        Poppins: '"Poppins", serif'
-      }
+      fontFamily: {
+        Poppins: '"Poppins", serif',
+      },
     },
   },
-  plugins: [
-    daisyui,
-  ],
+  plugins: [daisyui],
 };
-
