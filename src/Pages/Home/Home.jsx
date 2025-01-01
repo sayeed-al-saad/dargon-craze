@@ -8,7 +8,6 @@ const Home = () => {
   return (
     <div className="space-y-5">
       <Headers></Headers>
-      <Nabbar></Nabbar>
       <BreakingNews></BreakingNews>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-4">
         <div className="col-span-1">

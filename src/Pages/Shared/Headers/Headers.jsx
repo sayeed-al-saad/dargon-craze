@@ -3,7 +3,7 @@ import moment from "moment";
 
 const Headers = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <img src={logo} alt="" />
       <p>{moment().format("MMMM Do YYYY, h:mm a")}</p>
     </div>
