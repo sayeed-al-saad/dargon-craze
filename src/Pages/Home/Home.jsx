@@ -1,6 +1,5 @@
 import Headers from "../Shared/Headers/Headers";
 import LeftSideNav from "../Shared/LeftSideNav/LeftSideNav";
-import Nabbar from "../Shared/Navbar/Nabbar";
 import RightSideNav from "../Shared/RightSideNav/RightSideNav";
 import BreakingNews from "./BreakingNews";
 
