@@ -1,13 +1,31 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/authProvider";
 
 const Login = () => {
 
-    const handleLogin = e => {
-        e.preventDefault();
-        console.log(e.currentTarget)
-        const form = new FormData(e.currentTarget)
-        console.log(form.get('email'))
-    }
+  const { signIn } = useContext(AuthContext);
+
+  const  location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log(e.currentTarget);
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+ 
+    console.log(form.get("email"));
+    signIn(email, password)
+      .then(result => {
+        console.log(result)
+        navigate(location?.state?.from || '/');
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
 
   return (
     <div>
@@ -51,7 +69,14 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
-              <p className="text-center">Dont have an account, <Link to="/register" ><a className="text-orange-500 font-semibold" href="">Register</a></Link></p>
+              <p className="text-center">
+                Dont have an account,{" "}
+                <Link to="/register">
+                  <a className="text-orange-500 font-semibold" href="">
+                    Register
+                  </a>
+                </Link>
+              </p>
             </form>
           </div>
         </div>

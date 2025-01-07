@@ -3,12 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Provider/authProvider";
 
 const Nabbar = () => {
+  const { user, logOut } = useContext(AuthContext);
 
-  const {user} = useContext(AuthContext)
-
-  cosnt handleSignout = () =>{
-    
-  }
+  const handleSignout = () => {
+    logOut().then().catch();
+  };
 
   const navlink = (
     <>
@@ -61,14 +60,15 @@ const Nabbar = () => {
       </div>
 
       <div className="navbar-end gap-4">
-      {
-        user ?
-        <button onClick={handleSignout} className="btn primary">Sign Out</button>
-        :
-        <Link to="/login">
-        <button className="btn primary">Login</button>
-      </Link>
-      }
+        {user ? (
+          <button onClick={handleSignout} className="btn primary">
+            Sign Out
+          </button>
+        ) : (
+          <Link to="/login">
+            <button className="btn primary">Login</button>
+          </Link>
+        )}
         <div
           tabIndex={0}
           role="button"
